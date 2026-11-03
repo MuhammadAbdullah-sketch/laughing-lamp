@@ -20,6 +20,23 @@ class man{
         	cout << "Name: " << name << endl;}
 };
 
+class driver : public man{
+	private:
+		string modle;
+		int salary;
+	
+	public:
+		void input(string mod, int sal){
+			modle = mod;
+			salary = sal;
+		}
+
+		void dispaly() {
+			cout << "Your Car modle = " << modle << endl;
+			cout << "Your Salary = " << salary << endl;
+		}
+};
+
 class teacher : public man{
 	
 	private:
@@ -44,11 +61,12 @@ class teacher : public man{
 int main () {
     man m1;
     teacher t1;
+	driver d1;
     
     m1.m_input(102,"Muhammad ABdullah");
-    t1.input(12000,"CS");
+    d1.input("Toyota", 35000);
     m1.m_display();
-    t1.display();
+    d1.dispaly();
     
     return 0;
 }
